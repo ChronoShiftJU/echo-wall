@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
 import {
     Card,
     CardContent,
@@ -22,7 +20,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import {
     AlertCircle,
     Settings,
-    Search,
     Twitter,
     Facebook,
     Instagram,
@@ -33,10 +30,8 @@ import {
     Grid,
     List,
     RefreshCw,
-    LogOut,
-    BarChart2,
-    Home
 } from "lucide-react";
+import MainLayout from "@/layouts/MainLayout";
 
 const Feed = () => {
     const [layoutType, setLayoutType] = useState("grid");
@@ -86,73 +81,10 @@ const Feed = () => {
     ];
 
     return (
-        <div className="min-h-svh bg-background text-foreground dark">
-            {/* Header Section */}
-            <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur">
-                <div className="container flex h-16 items-center justify-between px-4">
-                    {/* Logo */}
-                    <div className="flex items-center gap-2">
-                        <Home className="h-6 w-6" />
-                        <span className="text-xl font-bold">FeedApp</span>
-                    </div>
-
-                    {/* Navigation - Desktop */}
-                    <nav className="hidden md:flex items-center space-x-4">
-                        <Link to="/feed">
-                            <Button variant="link" className="text-primary font-medium">Feed</Button>
-                        </Link>
-                        <Link to="/analytics">
-                            <Button variant="link" className="text-muted-foreground">
-                                <BarChart2 className="mr-1 h-4 w-4" /> Analytics
-                            </Button>
-                        </Link>
-                        <Link to="/settings">
-                            <Button variant="link" className="text-muted-foreground">
-                                <Settings className="mr-1 h-4 w-4" /> Settings
-                            </Button>
-                        </Link>
-                        <Button variant="outline" size="sm">
-                            <LogOut className="mr-1 h-4 w-4" /> Logout
-                        </Button>
-                    </nav>
-
-                    {/* Search Bar */}
-                    <div className="hidden md:flex w-1/3 relative">
-                        <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                        <Input
-                            placeholder="Search posts..."
-                            className="pl-8"
-                        />
-                    </div>
-
-                    {/* Mobile Menu */}
-                    <div className="md:hidden flex items-center">
-                        <Button variant="ghost" size="icon">
-                            <Search />
-                        </Button>
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button variant="ghost">Menu</Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                                <DropdownMenuItem asChild>
-                                    <Link to="/feed">Feed</Link>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem asChild>
-                                    <Link to="/analytics">Analytics</Link>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem asChild>
-                                    <Link to="/settings">Settings</Link>
-                                </DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </div>
-                </div>
-            </header>
-
+        <MainLayout>
             <div className="container px-4 py-6 md:grid md:grid-cols-[1fr_250px] gap-6">
                 {/* Main Content Area */}
-                <main>
+                <div>
                     {/* Notification Banner */}
                     {showNotification && (
                         <div className="bg-primary/10 border border-primary/20 rounded-lg mb-6 p-3 flex justify-between items-center">
@@ -256,7 +188,7 @@ const Feed = () => {
                     <div className="mt-6 flex justify-center">
                         <Button variant="outline">Load More</Button>
                     </div>
-                </main>
+                </div>
 
                 {/* Sidebar / Filter Panel */}
                 <aside className="mt-6 md:mt-0">
@@ -371,34 +303,7 @@ const Feed = () => {
                     </Card>
                 </aside>
             </div>
-
-            {/* Footer */}
-            <footer className="border-t bg-background">
-                <div className="container px-4 py-6">
-                    <div className="flex flex-col md:flex-row justify-between items-center">
-                        <div className="flex gap-4 mb-4 md:mb-0">
-                            <Button variant="link" size="sm" className="text-muted-foreground">About</Button>
-                            <Button variant="link" size="sm" className="text-muted-foreground">Help</Button>
-                            <Button variant="link" size="sm" className="text-muted-foreground">Privacy</Button>
-                        </div>
-                        <div className="flex gap-2">
-                            <Button variant="ghost" size="icon" className="h-8 w-8">
-                                <Twitter className="h-4 w-4" />
-                            </Button>
-                            <Button variant="ghost" size="icon" className="h-8 w-8">
-                                <Facebook className="h-4 w-4" />
-                            </Button>
-                            <Button variant="ghost" size="icon" className="h-8 w-8">
-                                <Instagram className="h-4 w-4" />
-                            </Button>
-                        </div>
-                    </div>
-                    <div className="mt-4 text-center text-xs text-muted-foreground">
-                        © 2025 FeedApp. All rights reserved.
-                    </div>
-                </div>
-            </footer>
-        </div>
+        </MainLayout>
     );
 }
 

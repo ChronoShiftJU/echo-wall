@@ -82,12 +82,12 @@ const Feed = () => {
 
     return (
         <MainLayout>
-            <div className="container px-4 py-6 md:grid md:grid-cols-[1fr_250px] gap-6">
+            <div className="container w-full max-w-none px-4 py-6 md:grid md:grid-cols-[1fr_250px] gap-6">
                 {/* Main Content Area */}
-                <div>
+                <div className="w-full">
                     {/* Notification Banner */}
                     {showNotification && (
-                        <div className="bg-primary/10 border border-primary/20 rounded-lg mb-6 p-3 flex justify-between items-center">
+                        <div className="bg-primary/10 border border-primary/20 rounded-lg mb-6 p-3 flex justify-between items-center w-full">
                             <div className="flex items-center">
                                 <AlertCircle className="h-4 w-4 text-primary mr-2" />
                                 <span className="text-sm">New posts are available!</span>
@@ -106,7 +106,7 @@ const Feed = () => {
                     )}
 
                     {/* Feed Header */}
-                    <div className="flex justify-between items-center mb-6">
+                    <div className="flex justify-between items-center mb-6 w-full">
                         <h2 className="text-2xl font-bold">Your Feed</h2>
                         <div className="flex items-center gap-2">
                             <Button variant="outline" size="sm">
@@ -131,9 +131,9 @@ const Feed = () => {
                     </div>
 
                     {/* Feed Container */}
-                    <div className={layoutType === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-4" : "flex flex-col gap-4"}>
+                    <div className={`w-full ${layoutType === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-4" : "flex flex-col gap-4"}`}>
                         {posts.map((post) => (
-                            <Card key={post.id} className="overflow-hidden">
+                            <Card key={post.id} className="overflow-hidden w-full">
                                 <CardHeader className="p-4 pb-2 flex flex-row justify-between">
                                     <div className="flex items-center gap-2">
                                         <Badge variant="outline" className="flex items-center gap-1 px-2">
@@ -185,14 +185,14 @@ const Feed = () => {
                     </div>
 
                     {/* Load More */}
-                    <div className="mt-6 flex justify-center">
+                    <div className="mt-6 flex justify-center w-full">
                         <Button variant="outline">Load More</Button>
                     </div>
                 </div>
 
                 {/* Sidebar / Filter Panel */}
-                <aside className="mt-6 md:mt-0">
-                    <Card>
+                <aside className="mt-6 md:mt-0 w-full">
+                    <Card className="w-full">
                         <CardHeader>
                             <CardTitle className="text-lg">Filters</CardTitle>
                         </CardHeader>
@@ -276,7 +276,7 @@ const Feed = () => {
                         </CardFooter>
                     </Card>
 
-                    <Card className="mt-4">
+                    <Card className="mt-4 w-full">
                         <CardHeader className="pb-2">
                             <CardTitle className="text-lg">Popular Hashtags</CardTitle>
                         </CardHeader>

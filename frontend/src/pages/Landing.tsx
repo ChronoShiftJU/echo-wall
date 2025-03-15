@@ -9,10 +9,10 @@ import { Twitter, Facebook, Instagram, Youtube, ArrowRight, CheckCircle, Globe, 
 
 const Landing = () => {
   return (
-    <div className="min-h-svh bg-background text-foreground">
+    <div className="min-h-svh w-full bg-background text-foreground">
       {/* Navigation */}
-      <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur">
-        <div className="container flex h-16 items-center justify-between px-4">
+      <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur w-full">
+        <div className="container w-full max-w-none flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <Globe className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold">EchoWall</span>
@@ -29,8 +29,8 @@ const Landing = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 md:py-24 lg:py-32 bg-background">
-        <div className="container px-4 md:px-6">
+      <section className="py-12 md:py-24 lg:py-32 bg-background w-full">
+        <div className="container w-full max-w-none px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
@@ -54,8 +54,8 @@ const Landing = () => {
       </section>
 
       {/* Social Platforms Preview */}
-      <section className="py-12 bg-muted/50">
-        <div className="container px-4 md:px-6">
+      <section className="py-12 bg-muted/50 w-full">
+        <div className="container w-full max-w-none px-4 md:px-6">
           <div className="grid place-items-center py-8">
             <div className="flex flex-wrap justify-center gap-4 md:gap-8 opacity-80">
               <div className="flex items-center gap-2">
@@ -84,8 +84,8 @@ const Landing = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 md:py-24">
-        <div className="container px-4 md:px-6">
+      <section className="py-16 md:py-24 w-full">
+        <div className="container w-full max-w-none px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl mb-4">Why Choose EchoWall?</h2>
             <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
@@ -128,8 +128,8 @@ const Landing = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 md:py-24 bg-muted/50">
-        <div className="container px-4 md:px-6">
+      <section className="py-16 md:py-24 bg-muted/50 w-full">
+        <div className="container w-full max-w-none px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl mb-4">How It Works</h2>
             <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
@@ -166,8 +166,8 @@ const Landing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24">
-        <div className="container px-4 md:px-6">
+      <section className="py-16 md:py-24 w-full">
+        <div className="container w-full max-w-none px-4 md:px-6">
           <div className="rounded-lg bg-primary/10 border border-primary/20 p-8 md:p-12 text-center">
             <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl mb-4">Ready to Get Started?</h2>
             <p className="md:text-lg mb-6 max-w-2xl mx-auto text-muted-foreground">
@@ -182,8 +182,8 @@ const Landing = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t bg-background">
-        <div className="container px-4 py-8 md:py-12">
+      <footer className="border-t bg-background w-full">
+        <div className="container w-full max-w-none px-4 py-8 md:py-12">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
               <Globe className="h-6 w-6 text-primary" />

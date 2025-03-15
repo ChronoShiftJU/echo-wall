@@ -4,11 +4,13 @@ import Analytics from "../pages/Analytics.tsx";
 import Settings from "../pages/Settings.tsx";
 import Login from "../pages/auth/Login.tsx";
 import Signup from "../pages/auth/Signup.tsx";
+import Landing from "@/pages/Landing.tsx";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/landing" element={<Landing />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/settings" element={<Settings />} />

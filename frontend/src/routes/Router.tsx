@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Feed from "../pages/Feed.tsx";
 import Analytics from "../pages/Analytics.tsx";
 import Settings from "../pages/ProfileSettings.tsx";
@@ -15,7 +15,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/landing" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/settings" element={<Settings />} />
@@ -26,8 +26,6 @@ const Router = () => {
         <Route path="/settings" element={<ProfileSettings />} />
         <Route path="/about" element={<About />} />
         <Route path="/terms" element={<Terms />} />
-
-        <Route path="/" element={<Navigate to="/landing" replace />} />
       </Routes>
     </BrowserRouter>
   );

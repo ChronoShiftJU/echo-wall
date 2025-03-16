@@ -69,7 +69,7 @@ const Feed = () => {
             }
 
             const data = await response.json();
-            console.log(data);
+            // console.log(data);
 
             const p = JSON.parse(data.data);
             const pWithIcon = p.map((item: any) => {

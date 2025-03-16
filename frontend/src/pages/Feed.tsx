@@ -70,8 +70,27 @@ const Feed = () => {
 
             const data = await response.json();
             console.log(data);
+
             const p = JSON.parse(data.data);
-            setPosts(p);
+            const pWithIcon = p.map((item: any) => {
+                let icon;
+                switch (item.platform) {
+                    case "facebook":
+                        icon = <Facebook size={16} />;
+                        break;
+                    case "twitter":
+                        icon = <Twitter size={16} />;
+                        break;
+                    case "instagram":
+                        icon = <Instagram size={16} />;
+                        break;
+                    case "youtube":
+                        icon = <Youtube size={16} />;
+                        break;
+                }
+                return { ...item, icon };
+            });
+            setPosts(pWithIcon);
         } catch (error) {
             console.error("Failed to fetch feed:", error);
         }

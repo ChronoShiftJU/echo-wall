@@ -28,8 +28,12 @@ const Landing = () => {
             <Link to="/faq">
               <Button variant="link">FAQ</Button>
             </Link>
-            <Button variant="outline" size="sm">Login</Button>
-            <Button size="sm">Sign Up</Button>
+            <Link to="/login">
+              <Button variant="outline" size="sm">Login</Button>
+            </Link>
+            <Link to="/signup">
+              <Button size="sm">Sign Up</Button>
+            </Link>
           </nav>
           <Button variant="outline" className="md:hidden">Menu</Button>
         </div>

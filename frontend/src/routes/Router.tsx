@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Feed from "../pages/Feed.tsx";
 import Analytics from "../pages/Analytics.tsx";
-import Settings from "../pages/Settings.tsx";
+import Settings from "../pages/ProfileSettings.tsx";
 import Login from "../pages/auth/Login.tsx";
 import Signup from "../pages/auth/Signup.tsx";
 import Landing from "@/pages/Landing.tsx";
 import Features from "@/pages/Features.tsx";
 import FAQ from "@/pages/FAQ.tsx";
+import ProfileSettings from "../pages/ProfileSettings.tsx";
 
 const Router = () => {
   return (
@@ -20,7 +21,9 @@ const Router = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<Features />} />
         <Route path="/faq" element={<FAQ />} />
-        <Route path="/" element={<Navigate to="/feed" replace />} />
+        <Route path="/settings" element={<ProfileSettings />} />
+
+        <Route path="/" element={<Navigate to="/landing" replace />} />
       </Routes>
     </BrowserRouter>
   );

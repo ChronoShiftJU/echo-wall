@@ -13,12 +13,15 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Globe } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,6 +29,7 @@ const LoginPage = () => {
     // Simulate API call
     setTimeout(() => {
       setIsLoading(false);
+      navigate("/feed");
       // Here you would handle login success
     }, 1500);
   };

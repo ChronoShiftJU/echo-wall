@@ -14,6 +14,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Globe } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
   const [fullName, setFullName] = useState("");
@@ -21,6 +22,7 @@ const SignupPage = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,6 +31,7 @@ const SignupPage = () => {
     setTimeout(() => {
       setIsLoading(false);
       // Here you would handle signup success
+      navigate("/feed");
     }, 1500);
   };
 

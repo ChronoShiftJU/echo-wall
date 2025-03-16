@@ -10,6 +10,8 @@ import { Twitter, Facebook, Instagram, Youtube, ArrowRight, CheckCircle, Globe, 
 import HeaderLanding from "@/components/HeaderLanding";
 import Footer from "@/components/Footer";
 
+import { Link } from "react-router-dom";
+
 const Landing = () => {
   return (
     <div className="min-h-svh w-full bg-background text-foreground">
@@ -29,10 +31,12 @@ const Landing = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="h-12">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link to="/signup">
+                <Button size="lg" className="h-12">
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
               <Button variant="outline" size="lg" className="h-12">
                 See Demo
               </Button>
@@ -161,10 +165,12 @@ const Landing = () => {
             <p className="md:text-lg mb-6 max-w-2xl mx-auto text-muted-foreground">
               Join thousands of users who've already simplified their social media monitoring with EchoWall.
             </p>
-            <Button size="lg" className="h-12">
-              Create Your Feed
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link to="/signup">
+              <Button size="lg" className="h-12">
+                Create Your Feed
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

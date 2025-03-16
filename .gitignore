@@ -1,0 +1,40 @@
+# Root-level ignores
+node_modules/
+.DS_Store
+.env
+.env.*
+*.log
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+
+# TypeScript specific
+*.tsbuildinfo
+*.d.ts.map
+
+# IDE / Editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+Thumbs.db
+*.DS_Store
+
+# MongoDB related
+/data/db/
+/mongodb/
+
+# Logs
+*.log
+
+# Temp files
+/tmp/

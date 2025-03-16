@@ -13,11 +13,9 @@ import {
   Search,
   Menu,
   LogOut,
-  BarChart2,
   Home,
   Bell,
   User,
-  Newspaper,
 } from "lucide-react";
 
 const Header = () => {
@@ -29,16 +27,6 @@ const Header = () => {
           <Home className="h-5 w-5" />
           <span className="text-xl font-bold text-blue-400">EchoWall</span>
         </Link>
-
-        {/* Navigation - Desktop */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/feed" className="hover:text-blue-400 font-medium flex items-center gap-1">
-            <Newspaper className="h-4 w-4" /> Feed
-          </Link>
-          <Link to="/analytics" className="hover:text-blue-400 font-medium flex items-center gap-1">
-            <BarChart2 className="h-4 w-4" /> Analytics
-          </Link>
-        </nav>
 
         {/* Search and Actions */}
         <div className="flex items-center gap-4">
@@ -75,16 +63,17 @@ const Header = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-48 bg-gray-800 border-gray-700 text-white">
               <DropdownMenuItem className="hover:bg-gray-700 focus:bg-gray-700 cursor-pointer">
-                <User className="mr-2 h-4 w-4" /> Profile
+                <Link to="/settings" className="w-full flex items-center hover:bg-gray-700 focus:bg-gray-700">
+                  <User className="mr-2 h-4 w-4" /> Profile
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link to="/settings" className="w-full flex items-center hover:bg-gray-700 focus:bg-gray-700">
-                  <Settings className="mr-2 h-4 w-4" /> Settings
-                </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-gray-700" />
               <DropdownMenuItem className="hover:bg-gray-700 focus:bg-gray-700 cursor-pointer text-red-400">
-                <LogOut className="mr-2 h-4 w-4" /> Logout
+                <Link to="/landing" className="w-full flex items-center hover:bg-gray-700 focus:bg-gray-700">
+                  <LogOut className="mr-2 h-4 w-4" /> Logout
+                </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -99,14 +88,6 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48 bg-gray-800 border-gray-700 text-white">
                 <DropdownMenuItem asChild>
-                  <Link to="/feed" className="w-full flex items-center hover:bg-gray-700 focus:bg-gray-700">
-                    Feed
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/analytics" className="w-full flex items-center hover:bg-gray-700 focus:bg-gray-700">
-                    <BarChart2 className="mr-2 h-4 w-4" /> Analytics
-                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/settings" className="w-full flex items-center hover:bg-gray-700 focus:bg-gray-700">

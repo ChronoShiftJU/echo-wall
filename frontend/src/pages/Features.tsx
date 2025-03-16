@@ -1,30 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Twitter, Facebook, Instagram, Youtube, Globe, Layers, Filter, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Twitter, Facebook, Instagram, Youtube, Layers, Filter, Zap } from "lucide-react";
 import Footer from "@/components/Footer";
+import HeaderLanding from "@/components/HeaderLanding";
 
 const Features = () => {
   return (
     <div className="min-h-svh w-full bg-background text-foreground">
       {/* Navigation */}
-      <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur w-full">
-        <div className="container w-full max-w-none flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-2">
-            <Link to="/" className="flex items-center gap-2">
-              <Globe className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">EchoWall</span>
-            </Link>
-          </div>
-          <nav className="hidden md:flex items-center space-x-4">
-            <Button variant="link" className="font-semibold text-primary">Features</Button>
-            <Button variant="link">Pricing</Button>
-            <Button variant="link">FAQ</Button>
-            <Button variant="outline" size="sm">Login</Button>
-            <Button size="sm">Sign Up</Button>
-          </nav>
-          <Button variant="outline" className="md:hidden">Menu</Button>
-        </div>
-      </header>
+      <HeaderLanding />
 
       {/* Hero Section */}
       <section className="py-12 md:py-16 bg-primary/5 w-full">

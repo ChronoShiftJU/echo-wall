@@ -8,6 +8,8 @@ import Landing from "@/pages/Landing.tsx";
 import Features from "@/pages/Features.tsx";
 import FAQ from "@/pages/FAQ.tsx";
 import ProfileSettings from "../pages/ProfileSettings.tsx";
+import About from "@/pages/About.tsx";
+import Terms from "@/pages/Terms.tsx";
 
 const Router = () => {
   return (
@@ -22,6 +24,8 @@ const Router = () => {
         <Route path="/features" element={<Features />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/settings" element={<ProfileSettings />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/terms" element={<Terms />} />
 
         <Route path="/" element={<Navigate to="/landing" replace />} />
       </Routes>

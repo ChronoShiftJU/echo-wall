@@ -3,39 +3,43 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
-import { Twitter, Github, ExternalLink } from "lucide-react";
-import MainLayout from "@/layouts/MainLayout";
+import { Twitter, Github, ExternalLink, Linkedin } from "lucide-react";
 
+import HeaderLanding from "@/components/HeaderLanding";
+import Footer from "@/components/Footer";
 
 const About = () => {
   const teamMembers = [
     {
-      name: "Aiden Chen",
+      name: "Pritam Das",
       headline: "Full Stack Developer",
-      imgUrl: "/api/placeholder/150/150",
-      twitter: "https://twitter.com/aidenchen",
-      github: "https://github.com/aidenchen",
+      imgUrl: "https://bit.ly/4kLRKkK",
+      twitter: "https://x.com/frank06n",
+      github: "https://github.com/frank06n",
+      linkedin: "https://linkedin.com/in/pritamdas2006",
     },
     {
-      name: "Maya Rodriguez",
-      headline: "UI/UX Designer",
-      imgUrl: "/api/placeholder/150/150",
-      twitter: "https://twitter.com/mayarodriguez",
-      github: "https://github.com/mayarodriguez",
+      name: "Suparno Saha",
+      headline: "Frontend Developer",
+      imgUrl: "https://bit.ly/4hdTCzQ",
+      twitter: "https://x.com/letsbecool9792",
+      github: "https://github.com/letsbecool9792",
+      linkedin: "https://linkedin.com/in/letsbecool9792",
     },
     {
-      name: "Jamal Washington",
-      headline: "Backend Architect",
-      imgUrl: "/api/placeholder/150/150",
-      twitter: "https://twitter.com/jamalwashington",
-      github: "https://github.com/jamalwashington",
+      name: "Sagnik Goswami",
+      headline: "Backend Developer",
+      imgUrl: "https://bit.ly/4hhIbHs",
+      twitter: "https://x.com/sagnikgos",
+      github: "https://github.com/sagnikgos",
+      linkedin: "https://linkedin.com/in/sagnikgos06",
     },
   ];
 
   return (
-    <MainLayout>
-        <div className="min-h-svh w-full bg-background text-foreground">
-
+    <>
+      <HeaderLanding />
+      <div className="min-h-svh w-full bg-background text-foreground">
         {/* About Section */}
         <section className="py-12 md:py-24 lg:py-24 bg-background w-full">
             <div className="container w-full max-w-none px-4 md:px-6">
@@ -90,6 +94,11 @@ const About = () => {
                             <Github className="h-4 w-4" />
                             </Button>
                         </a>
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                            <Linkedin className="h-4 w-4" />
+                            </Button>
+                        </a>
                         </div>
                     </div>
                     </CardContent>
@@ -116,8 +125,9 @@ const About = () => {
             </div>
             </div>
         </section>
-        </div>
-    </MainLayout>
+      </div>
+      <Footer />
+    </>
   );
 };
 

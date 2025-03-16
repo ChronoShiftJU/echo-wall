@@ -7,6 +7,8 @@ import {
 } from "@/components/ui/card";
 import { Twitter, Facebook, Instagram, Youtube, ArrowRight, CheckCircle, Globe, Monitor, Zap } from "lucide-react";
 
+import { Link } from "react-router-dom";
+
 const Landing = () => {
   return (
     <div className="min-h-svh w-full bg-background text-foreground">
@@ -18,7 +20,9 @@ const Landing = () => {
             <span className="text-xl font-bold">EchoWall</span>
           </div>
           <nav className="hidden md:flex items-center space-x-4">
+          <Link to="/features">
             <Button variant="link">Features</Button>
+          </Link>
             <Button variant="link">Pricing</Button>
             <Button variant="link">FAQ</Button>
             <Button variant="outline" size="sm">Login</Button>

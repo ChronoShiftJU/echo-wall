@@ -57,7 +57,7 @@ const Feed = () => {
     useEffect(() => {
         const fetchFeed = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/feed", {
+            const response = await fetch("/api/feed", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`,

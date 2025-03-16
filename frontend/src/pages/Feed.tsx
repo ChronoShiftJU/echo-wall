@@ -32,53 +32,55 @@ import {
     RefreshCw,
 } from "lucide-react";
 import MainLayout from "@/layouts/MainLayout";
+import { useEffect } from "react";
+import { JSX } from "react";
+
+type SocialMediaPost = {
+    id: number;
+    platform: "twitter" | "facebook" | "instagram" | "youtube";
+    icon: JSX.Element;
+    username: string;
+    timestamp: string;
+    content: string;
+    likes: number;
+    shares: number;
+};
+
 
 const Feed = () => {
     const [layoutType, setLayoutType] = useState("grid");
     const [showNotification, setShowNotification] = useState(true);
 
-    const posts = [
-        {
-            id: 1,
-            platform: "twitter",
-            icon: <Twitter size={16} />,
-            username: "@techuser",
-            timestamp: "2 hours ago",
-            content: "Just launched our new product! Check it out at our website #technology #innovation",
-            likes: 24,
-            shares: 8
-        },
-        {
-            id: 2,
-            platform: "facebook",
-            icon: <Facebook size={16} />,
-            username: "Jane Smith",
-            timestamp: "3 hours ago",
-            content: "Had an amazing experience at the tech conference today. Met so many brilliant minds!",
-            likes: 45,
-            shares: 12
-        },
-        {
-            id: 3,
-            platform: "instagram",
-            icon: <Instagram size={16} />,
-            username: "@photomaestro",
-            timestamp: "5 hours ago",
-            content: "New photo series dropping next week. Here's a sneak peek! #photography",
-            likes: 132,
-            shares: 28
-        },
-        {
-            id: 4,
-            platform: "youtube",
-            icon: <Youtube size={16} />,
-            username: "TechTutorials",
-            timestamp: "1 day ago",
-            content: "Learn how to build a React app with shadcn UI in our latest tutorial",
-            likes: 87,
-            shares: 34
+    // const [feedData, setFeedData] = useState<any>(null);
+    const token = "<your_token_here>"; // Replace with actual token
+
+    useEffect(() => {
+        const fetchFeed = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/api/feed", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            },
+            });
+
+            if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log(data);
+            const p = JSON.parse(data.data);
+            setPosts(p);
+        } catch (error) {
+            console.error("Failed to fetch feed:", error);
         }
-    ];
+        };
+
+        fetchFeed();
+    }, []);
+
+    const [posts, setPosts] = useState<SocialMediaPost[]>([]);
 
     return (
         <MainLayout>

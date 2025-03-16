@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Twitter, Facebook, Instagram, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -11,10 +12,15 @@ const Footer = () => {
               <span className="text-xl font-bold">EchoWall</span>
             </div>
             <div className="flex gap-4 mb-4 md:mb-0">
-              <Button variant="link" size="sm" className="text-muted-foreground">About</Button>
-              <Button variant="link" size="sm" className="text-muted-foreground">Help</Button>
-              <Button variant="link" size="sm" className="text-muted-foreground">Privacy</Button>
-              <Button variant="link" size="sm" className="text-muted-foreground">Terms</Button>
+              <Link to="/about">
+                <Button variant="link" size="sm" className="text-muted-foreground">About</Button>
+              </Link>
+              <Link to="/faq">
+                <Button variant="link" size="sm" className="text-muted-foreground">Help</Button>
+              </Link>
+              <Link to="/terms">
+                <Button variant="link" size="sm" className="text-muted-foreground">Privacy & Terms</Button>
+              </Link>
             </div>
             <div className="flex gap-2">
               <Button variant="ghost" size="icon" className="h-8 w-8">

@@ -7,37 +7,14 @@ import {
 } from "@/components/ui/card";
 import { Twitter, Facebook, Instagram, Youtube, ArrowRight, CheckCircle, Globe, Monitor, Zap } from "lucide-react";
 
-import { Link } from "react-router-dom";
+import HeaderLanding from "@/components/HeaderLanding";
+import Footer from "@/components/Footer";
 
 const Landing = () => {
   return (
     <div className="min-h-svh w-full bg-background text-foreground">
       {/* Navigation */}
-      <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur w-full">
-        <div className="container w-full max-w-none flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-2">
-            <Globe className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">EchoWall</span>
-          </div>
-          <nav className="hidden md:flex items-center space-x-4">
-            <Link to="/features">
-              <Button variant="link">Features</Button>
-            </Link>
-            <Link to="/features"></Link>
-            <Button variant="link">Pricing</Button>
-            <Link to="/faq">
-              <Button variant="link">FAQ</Button>
-            </Link>
-            <Link to="/login">
-              <Button variant="outline" size="sm">Login</Button>
-            </Link>
-            <Link to="/signup">
-              <Button size="sm">Sign Up</Button>
-            </Link>
-          </nav>
-          <Button variant="outline" className="md:hidden">Menu</Button>
-        </div>
-      </header>
+      <HeaderLanding />
 
       {/* Hero Section */}
       <section className="py-12 md:py-24 lg:py-32 bg-background w-full">
@@ -193,36 +170,7 @@ const Landing = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t bg-background w-full">
-        <div className="container w-full max-w-none px-4 py-8 md:py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Globe className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">EchoWall</span>
-            </div>
-            <div className="flex gap-4 mb-4 md:mb-0">
-              <Button variant="link" size="sm" className="text-muted-foreground">About</Button>
-              <Button variant="link" size="sm" className="text-muted-foreground">Help</Button>
-              <Button variant="link" size="sm" className="text-muted-foreground">Privacy</Button>
-              <Button variant="link" size="sm" className="text-muted-foreground">Terms</Button>
-            </div>
-            <div className="flex gap-2">
-              <Button variant="ghost" size="icon" className="h-8 w-8">
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="h-8 w-8">
-                <Facebook className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="h-8 w-8">
-                <Instagram className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-          <div className="mt-8 text-center text-xs text-muted-foreground">
-            © 2025 EchoWall. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

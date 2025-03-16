@@ -3,10 +3,11 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
-import { Globe, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Footer from "@/components/Footer";
+import HeaderLanding from "@/components/HeaderLanding";
 
 const FAQ = () => {
   // State to track which FAQ items are expanded
@@ -72,26 +73,7 @@ const FAQ = () => {
   return (
     <div className="min-h-svh w-full bg-background text-foreground">
       {/* Navigation */}
-      <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur w-full">
-        <div className="container w-full max-w-none flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-2">
-            <Globe className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">EchoWall</span>
-          </div>
-          <nav className="hidden md:flex items-center space-x-4">
-            <Link to="/features">
-              <Button variant="link">Features</Button>
-            </Link>
-            <Button variant="link">Pricing</Button>
-            <Link to="/faq">
-              <Button variant="link">FAQ</Button>
-            </Link>
-            <Button variant="outline" size="sm">Login</Button>
-            <Button size="sm">Sign Up</Button>
-          </nav>
-          <Button variant="outline" className="md:hidden">Menu</Button>
-        </div>
-      </header>
+      <HeaderLanding />
 
       {/* FAQ Hero Section */}
       <section className="py-12 md:py-16 bg-background w-full">

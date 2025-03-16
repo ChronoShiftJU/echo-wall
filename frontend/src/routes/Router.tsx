@@ -6,6 +6,7 @@ import Login from "../pages/auth/Login.tsx";
 import Signup from "../pages/auth/Signup.tsx";
 import Landing from "@/pages/Landing.tsx";
 import Features from "@/pages/Features.tsx";
+import FAQ from "@/pages/FAQ.tsx";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<Features />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/" element={<Navigate to="/feed" replace />} />
       </Routes>
     </BrowserRouter>

@@ -20,11 +20,14 @@ const Landing = () => {
             <span className="text-xl font-bold">EchoWall</span>
           </div>
           <nav className="hidden md:flex items-center space-x-4">
-          <Link to="/features">
-            <Button variant="link">Features</Button>
-          </Link>
+            <Link to="/features">
+              <Button variant="link">Features</Button>
+            </Link>
+            <Link to="/features"></Link>
             <Button variant="link">Pricing</Button>
-            <Button variant="link">FAQ</Button>
+            <Link to="/faq">
+              <Button variant="link">FAQ</Button>
+            </Link>
             <Button variant="outline" size="sm">Login</Button>
             <Button size="sm">Sign Up</Button>
           </nav>
